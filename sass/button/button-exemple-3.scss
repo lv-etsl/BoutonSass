@@ -1,6 +1,6 @@
 /*******************************************************************************
 *
-* BUTTON
+* BUTTON  GRADIENT
 *
 *******************************************************************************/
 // Configuration variables
@@ -21,17 +21,17 @@ $btn-text-decoration:   none;
 $btn-transition: 0.4s;
 
 
-// MAP COLOR
+// MAP COLOR . on l'adapte au gradient
 // on code
-// nth($colors, 1)    => background COLOR
-// nth($colors, 2)    => COLOR
-// nth($colors, 3)    => links COLOR
-// nth($colors, 4)    => border-color
+// nth($colors, 1)    => gradient 1
+// nth($colors, 2)    => gradient 2
+// nth($colors, 2)    => bg normal
+// nth($colors, 3)    => color font
+// nth($colors, 4)    => color lien ! peut être superflu
 // on péfère prendre des # plutôt que du rgb() ou hsl pour cet exemple
 $buttons-couleurs: (
-  '': (#f2f2f2, #666, #666,#FF530D), // '' btn par défaut
-  -error: (#52bf4a, #fff, #666,#FF530D),
-  -warning: (#c23435, #fff, #666,#FF530D)
+  '':         ( #f45d91, #ff83a2, transparent, #666, #666,#FF530D,), // '' btn par défaut
+  -error:     ( #ffcce2, #ffa6c3, transparent, #fff, #666,#FF530D,),
 )!default;
 
 // Placeholder pour valeurs statiques
@@ -58,25 +58,28 @@ $buttons-couleurs: (
   // on dynamise et dry:
   @each $type, $colors in $buttons-couleurs {
     // on déclare
-    $bgcolor:     nth($colors, 1);
-    $fontcolor:   nth($colors, 2);
-    $linkscolor:  nth($colors,3);
+    $grad1:       nth($colors, 1);
+    $grad2:       nth($colors, 2);
+    $bgcolor:     nth($colors, 3);
+    $fontcolor:   nth($colors, 4);
+    $linkscolor:  nth($colors, 5);
 
     &#{$type} {
-      background-color: $bgcolor;
+      background-image: linear-gradient($grad1, $grad2);
+      border-color: $grad1;
       color: $fontcolor;
 
       // juste pour montrer
       &:hover, &:focus {
         color: desaturate($fontcolor, 100%);
-        background-color: saturate($bgcolor, 50%);
-        border-color: saturate($bgcolor, 50%);
+        background-image: linear-gradient($grad2, $grad1); // on peut mettre darken ( $grad , %)
+        border-color: $grad2; // on peut mettre darken ( $grad , %)
       }
 
       &:visited {
         color: desaturate($fontcolor, 100%);
-        background-color: darken($bgcolor, 50%);
-        border-color: darken($bgcolor, 50%);
+        background-image: linear-gradient($grad2, $grad1);// on peut mettre darken ( $grad , %)
+        border-color: $grad2; // on peut mettre darken ( $grad , %)
       }
       // on sait jamais, peut être superflu ....
       > a {

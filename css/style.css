@@ -1,6 +1,6 @@
 /*******************************************************************************
 *
-* GENERAL // TO DELETE
+* GENERAL
 *
 *******************************************************************************/
 * {
@@ -17,7 +17,7 @@ body {
 * BUTTON
 *
 *******************************************************************************/
-.btn {
+.btn, .btn-error {
   display: inline-block;
   padding: 0.5rem;
   margin: 0.5rem;
@@ -27,62 +27,47 @@ body {
   text-decoration: none;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
+  box-shadow: 0.2rem 0.2rem #f2f2f2;
 }
-.btn > a {
+.btn > a, .btn-error > a {
   display: block;
   text-decoration: none;
 }
 
 .btn {
-  background-color: #f2f2f2;
-  color: #666;
+  color: #ff6f61;
+  background: #ffccc7;
+  border-color: #ffccc7;
 }
-.btn:hover, .btn:focus {
-  color: #666666;
-  background-color: #f8ebeb;
-  border-color: #f8ebeb;
+.btn:hover {
+  color: #b0b0b0;
+  background-color: #ff6f61;
+  border-color: #ff6f61;
 }
-.btn:visited {
-  color: #666666;
-  background-color: #727272;
-  border-color: #727272;
-}
-.btn > a {
-  color: #666;
-}
+
 .btn-error {
-  background-color: #52bf4a;
-  color: #fff;
+  color: #b94a48;
+  background: #d59392;
+  border-color: #d59392;
 }
-.btn-error:hover, .btn-error:focus {
-  color: white;
-  background-color: #1dfc0d;
-  border-color: #1dfc0d;
+.btn-error:hover {
+  color: #818181;
+  background-color: #f80d09;
+  border-color: #f80d09;
 }
-.btn-error:visited {
-  color: white;
-  background-color: #030703;
-  border-color: #030703;
+
+.btn a {
+  color: #3b71b2;
 }
-.btn-error > a {
-  color: #666;
+.btn a:hover {
+  color: black;
 }
-.btn-warning {
-  background-color: #c23435;
-  color: #fff;
+
+.btn-error a {
+  color: #46b5b7;
 }
-.btn-warning:hover, .btn-warning:focus {
-  color: white;
-  background-color: #f60002;
-  border-color: #f60002;
-}
-.btn-warning:visited {
-  color: white;
-  background-color: black;
-  border-color: black;
-}
-.btn-warning > a {
-  color: #666;
+.btn-error a:hover {
+  color: black;
 }
 
 /*# sourceMappingURL=style.css.map */

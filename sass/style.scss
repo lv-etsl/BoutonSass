@@ -2,5 +2,18 @@
 
 @charset 'utf-8';
 
-//@import 'button-exemple-1'; // premier exemple avec placeholder, mixin et loop
-@import 'button/button-exemple-2'; // exemple avec une map qui contient plusierus valeurs !!!!
+/*******************************************************************************
+*
+* GENERAL
+*
+*******************************************************************************/
+
+*{box-sizing:border-box;}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+@import 'button/button-exemple-1'; // premier exemple avec placeholder, mixin et loop
+//@import 'button/button-exemple-2'; // exemple avec une map qui contient plusierus valeurs
+//@import 'button/button-exemple-3'; // exemple gradient avec une map qui contient plusierus valeurs
