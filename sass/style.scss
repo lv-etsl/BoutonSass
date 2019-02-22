@@ -9,11 +9,15 @@
 *******************************************************************************/
 
 *{box-sizing:border-box;}
+html {
+  font-size: 100%;
+}
 body {
   margin: 0;
   padding: 0;
 }
 
-@import 'button/button-exemple-1'; // premier exemple avec placeholder, mixin et loop
+//@import 'button/button-exemple-1'; // premier exemple avec placeholder, mixin et loop
 //@import 'button/button-exemple-2'; // exemple avec une map qui contient plusierus valeurs
-//@import 'button/button-exemple-3'; // exemple gradient avec une map qui contient plusierus valeurs
+//@import 'button/button-exemple-3'; // exemple gradient avec une map qui contient plusieurs valeurs rajout de font-size , line-height
+@import 'button/button-exemple-4';
