@@ -1,0 +1,67 @@
+// mobile & large breakpoints
+
+// VARIABLES
+$xs-left-gutter:     10px;
+$xs-right-gutter:    10px;
+
+$lg-left-gutter:      .1fr;
+$lg-right-gutter:     .1fr;
+
+$break-1:           1024px; // fin mobile
+
+.container {
+  display: grid;
+  grid-template-rows: [header] auto [main] 1fr [aside] 1fr [footer] 1fr;
+  grid-template-columns: [left-gutter] $xs-left-gutter [body] auto [right-gutter] $xs-right-gutter;
+
+
+  @media (min-width: $break-1) {
+  grid-template-rows: [header] auto [body] 1fr [footer] 1fr;
+  grid-template-columns: [left-gutter] $lg-left-gutter [main] 4fr [aside] 3fr [right-gutter] $lg-right-gutter;
+  }
+}
+
+.header {
+  grid-row: header;
+  grid-column: body/right-gutter;
+
+
+  @media (min-width: $break-1) {
+    grid-column: main / right-gutter;
+  }
+}
+
+.main {
+  grid-row: main;
+  grid-column: body;
+
+
+  @media (min-width: $break-1) {
+    grid-row: body;
+    grid-column: main;
+  }
+}
+
+.aside {
+  grid-row: aside;
+  grid-column: body;
+
+
+  @media (min-width: $break-1) {
+    grid-row: body;
+    grid-column: aside;
+    display: flex;  // on flex toutes les divs
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+}
+
+.footer {
+  grid-row: footer;
+  grid-column: body/right-gutter;
+
+
+  @media (min-width: $break-1) {
+  grid-column: main / right-gutter;
+  }
+}

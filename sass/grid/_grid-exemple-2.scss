@@ -1,0 +1,28 @@
+// GRID pour XL
+
+.container {
+  display: grid;
+
+  grid-template-rows: [header] auto [body] 1fr [footer] 1fr;
+  grid-template-columns: [left-gutter] 0.1fr [main] 4fr [aside] 3fr [right-gutter] 0.1fr;
+}
+
+.header {
+  grid-row: header;
+  grid-column: main / right-gutter;
+}
+
+.main {
+  grid-row: body;
+  grid-column: main;
+}
+
+.aside {
+  grid-row: body;
+  grid-column: aside;
+}
+
+.footer {
+  grid-row: footer;
+  grid-column: main / right-gutter;
+}

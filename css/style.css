@@ -16,6 +16,63 @@ body {
   padding: 0;
 }
 
+.container {
+  display: grid;
+  grid-template-rows: [header] auto [main] 1fr [aside] 1fr [footer] 1fr;
+  grid-template-columns: [left-gutter] 10px [body] auto [right-gutter] 10px;
+}
+@media (min-width: 1024px) {
+  .container {
+    grid-template-rows: [header] auto [body] 1fr [footer] 1fr;
+    grid-template-columns: [left-gutter] 0.1fr [main] 4fr [aside] 3fr [right-gutter] 0.1fr;
+  }
+}
+
+.header {
+  grid-row: header;
+  grid-column: body/right-gutter;
+}
+@media (min-width: 1024px) {
+  .header {
+    grid-column: main / right-gutter;
+  }
+}
+
+.main {
+  grid-row: main;
+  grid-column: body;
+}
+@media (min-width: 1024px) {
+  .main {
+    grid-row: body;
+    grid-column: main;
+  }
+}
+
+.aside {
+  grid-row: aside;
+  grid-column: body;
+}
+@media (min-width: 1024px) {
+  .aside {
+    grid-row: body;
+    grid-column: aside;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+}
+
+.footer {
+  grid-row: footer;
+  grid-column: body/right-gutter;
+}
+@media (min-width: 1024px) {
+  .footer {
+    grid-column: main / right-gutter;
+  }
+}
+
 /*******************************************************************************
 *
 * BUTTON  GRADIENT
@@ -33,6 +90,7 @@ body {
   text-decoration: none;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
+  cursor: pointer;
 }
 .btn > a {
   display: block;

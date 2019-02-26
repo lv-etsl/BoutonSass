@@ -21,7 +21,7 @@ $btn-boder-radius:     0.15rem;
 $btn-border:           1px solid;
 $btn-text-align:       center;
 $btn-text-decoration:  none;
-
+$btn-cursor:           pointer;
 // STATIC TRANSITION
 $btn-transition: 0.4s;
 
@@ -39,6 +39,7 @@ $buttons-couleurs: (
   -error:     ( #ffcce2, #ffa6c3, transparent, #fff, #666,#FF530D,),
 )!default;
 
+// MAP WIDTH 
 $buttons-width: (
   -xs:        ( 10% ),
   -lg:        ( 100% ),
@@ -46,19 +47,22 @@ $buttons-width: (
 
 // Placeholder pour valeurs statiques
 %mesValeurs {
-  display: $btn-display;
-  font-size: $btn-fontSize;
-  line-height: $btn-lineHeight;
-  min-width: $btn-width;
-  padding: $btn-padding;
+  display:                            $btn-display;
+  font-size:                          $btn-fontSize;
+  line-height:                        $btn-lineHeight;
+  min-width:                          $btn-width;
+  padding:                            $btn-padding;
   //margin: $btn-margin;
-  border-radius: $btn-boder-radius;
-  border: $btn-border;
-  text-align: $btn-text-align;
-  text-decoration: $btn-text-decoration;
+  border-radius:                      $btn-boder-radius;
+  border:                             $btn-border;
+  text-align:                         $btn-text-align;
+  text-decoration:                    $btn-text-decoration;
   // on mets de la transition pour :hover
-  -webkit-transition-duration: $btn-transition;// safari
-  transition-duration: $btn-transition;
+  -webkit-transition-duration:        $btn-transition;// safari
+  transition-duration:                $btn-transition;
+  cursor:                             $btn-cursor;
+
+  // on rajoute un a
   > a {
     display: block;
     text-decoration: $btn-text-decoration;

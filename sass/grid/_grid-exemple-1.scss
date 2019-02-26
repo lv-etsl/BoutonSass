@@ -1,0 +1,34 @@
+// SOME GRID
+// source : https://vgpena.github.io/using-css-grid-the-right-way/
+
+// grid pour mobile
+
+// VARIABLES
+$xs-left-gutter:     10px;
+$xs-right-gutter:    10px;
+
+.container {
+  display: grid;
+  grid-template-rows: [header] auto [main] 1fr [aside] 1fr [footer] 1fr;
+  grid-template-columns: [left-gutter] $xs-left-gutter [body] 1fr [right-gutter] $xs-right-gutter;
+}
+
+.header {
+  grid-row: header;
+  grid-column: body/right-gutter;
+}
+
+.main {
+  grid-row: main;
+  grid-column: body;
+}
+
+.aside {
+  grid-row: aside;
+  grid-column: body;
+}
+
+.footer {
+  grid-row: footer;
+  grid-column: body/right-gutter;
+}
